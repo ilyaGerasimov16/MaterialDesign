@@ -1,5 +1,7 @@
 package com.example.materialdesign.view.main
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -38,6 +40,12 @@ class MainFragment : Fragment() {
             renderData(it)
         })
         viewModel.sendRequest()
+
+        binding.inputLayout.setEndIconOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW).apply {
+                data = Uri.parse("https://en.wikipedia.org/wiki/${binding.inputEditText.text.toString()}")
+            })
+        }
     }
 
     private fun renderData(pictureOfTheDayData: PictureOfTheDayData){
