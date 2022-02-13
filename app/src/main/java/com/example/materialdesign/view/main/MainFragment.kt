@@ -8,6 +8,7 @@ import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import coil.load
@@ -16,6 +17,7 @@ import com.example.materialdesign.databinding.FragmentMainBinding
 import com.example.materialdesign.view.MainActivity
 import com.example.materialdesign.viewModel.PictureOfTheDayData
 import com.example.materialdesign.viewModel.PictureOfTheDayViewModel
+import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 class MainFragment : Fragment() {
@@ -73,7 +75,23 @@ class MainFragment : Fragment() {
 
         (requireActivity() as MainActivity).setSupportActionBar(binding.bottomAppBar)
         setHasOptionsMenu(true)
+
+        binding.fab.setOnClickListener{
+            if(isMain){
+                binding.bottomAppBar.navigationIcon = null
+                binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
+                binding.fab.setImageResource(R.drawable.ic_back_fab)
+                binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar_other_screen)
+            } else{
+                binding.bottomAppBar.navigationIcon = ContextCompat.getDrawable(requireContext(),R.drawable.ic_hamburger_menu_bottom_bar)
+                binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
+                binding.fab.setImageResource(R.drawable.ic_plus_fab)
+                binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar)
+            }
+            isMain = !isMain
+        }
     }
+    var isMain = true
 
     private fun renderData(pictureOfTheDayData: PictureOfTheDayData){
         when(pictureOfTheDayData){
