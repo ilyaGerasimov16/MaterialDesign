@@ -45,5 +45,5 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_no_photo_vector" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
+    <include android:id="@+id/included" layout="@layout/bottom_sheet_layout"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
