@@ -6,9 +6,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import coil.load
@@ -102,6 +102,8 @@ class MainFragment : Fragment() {
                 binding.imageView.load(pictureOfTheDayData.serverResponse.url){
                     placeholder(R.drawable.ic_no_photo_vector)
                 }
+                binding.included.bottomSheetDescriptionHeader.text = pictureOfTheDayData.serverResponse.title
+                binding.included.bottomSheetDescription.text = pictureOfTheDayData.serverResponse.explanation
             }
         }
     }

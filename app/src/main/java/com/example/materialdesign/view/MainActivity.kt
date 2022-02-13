@@ -1,7 +1,7 @@
 package com.example.materialdesign.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.materialdesign.R
 import com.example.materialdesign.view.main.MainFragment
 
