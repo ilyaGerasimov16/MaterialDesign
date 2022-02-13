@@ -15,6 +15,7 @@ import coil.load
 import com.example.materialdesign.R
 import com.example.materialdesign.databinding.FragmentMainBinding
 import com.example.materialdesign.view.MainActivity
+import com.example.materialdesign.view.chips.ChipsFragment
 import com.example.materialdesign.viewModel.PictureOfTheDayData
 import com.example.materialdesign.viewModel.PictureOfTheDayViewModel
 import com.google.android.material.bottomappbar.BottomAppBar
@@ -121,7 +122,8 @@ class MainFragment : Fragment() {
                 Toast.makeText(requireContext(),"app_bar_fav",Toast.LENGTH_SHORT).show()
             }
             R.id.app_bar_settings->{
-                Toast.makeText(requireContext(),"app_bar_settings",Toast.LENGTH_SHORT).show()
+                requireActivity().supportFragmentManager.beginTransaction()
+                    .replace(R.id.container,ChipsFragment.newInstance()).commit()
             }
             android.R.id.home->{
                 BottomNavigationDrawerFragment().show(requireActivity().supportFragmentManager,"")
