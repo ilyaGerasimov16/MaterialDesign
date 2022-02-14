@@ -111,13 +111,21 @@ class MainFragment : Fragment() {
         }
     }
 
-
+    private fun showToastOnError(text:String){
+        Toast.makeText(requireContext(), text, Toast.LENGTH_SHORT).show()
+    }
 
     private fun renderData(pictureOfTheDayData: PictureOfTheDayData){
         when(pictureOfTheDayData){
-            is PictureOfTheDayData.Error -> {}
-            is PictureOfTheDayData.Loading -> {}
+            is PictureOfTheDayData.Error -> {
+                binding.loadingLayout.visibility = View.GONE
+                showToastOnError("$pictureOfTheDayData.error.message")
+            }
+            is PictureOfTheDayData.Loading -> {
+                binding.loadingLayout.visibility = View.VISIBLE
+            }
             is PictureOfTheDayData.Success -> {
+                binding.loadingLayout.visibility = View.GONE
                 binding.imageView.load(pictureOfTheDayData.serverResponse.url){
                     placeholder(R.drawable.ic_no_photo_vector)
                 }
