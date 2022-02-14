@@ -13,7 +13,7 @@ class ChipsFragment : Fragment() {
 
 
     private var _binding:FragmentChipsBinding? = null
-    val binding:FragmentChipsBinding
+    private val binding:FragmentChipsBinding
     get() = _binding!!
 
 

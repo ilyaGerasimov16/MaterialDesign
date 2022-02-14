@@ -12,7 +12,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 class BottomNavigationDrawerFragment:BottomSheetDialogFragment() {
 
     private var _binding: BottomNavigationLayoutBinding? = null
-    val binding:BottomNavigationLayoutBinding
+    private val binding:BottomNavigationLayoutBinding
         get() = _binding!!
 
 
@@ -30,9 +30,11 @@ class BottomNavigationDrawerFragment:BottomSheetDialogFragment() {
             when(menu.itemId){
                 R.id.navigation_one->{
                     Toast.makeText(requireContext(),"navigation_one", Toast.LENGTH_SHORT).show()
+                    activity?.supportFragmentManager?.beginTransaction()?.remove(this)?.commit()
                 }
                 R.id.navigation_two->{
                     Toast.makeText(requireContext(),"navigation_two", Toast.LENGTH_SHORT).show()
+                    activity?.supportFragmentManager?.beginTransaction()?.remove(this)?.commit()
                 }
             }
             true
