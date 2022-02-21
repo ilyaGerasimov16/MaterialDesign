@@ -17,29 +17,42 @@ class PictureOfTheDayViewModel:ViewModel() {
         return liveData
     }
 
-    fun sendRequest(){
-        liveData.postValue(PictureOfTheDayData.Loading(null))
-        picturesOfTheDayRetrofitImpl.getRetrofit().getPictureOfTheDay(BuildConfig.NASA_API_KEY).enqueue(
-            object : Callback<PDOServerResponse>{
-                override fun onResponse(
-                    call: Call<PDOServerResponse>,
-                    response: Response<PDOServerResponse>
-                ) {
-                    if(response.isSuccessful&&response.body()!=null){
-                        response.body()?.let {
-                            liveData.postValue(PictureOfTheDayData.Success(it))
-                        }
+    fun sendRequest(date:String) {
+        liveData.value = PictureOfTheDayData.Loading(0)
+        val apiKey: String = BuildConfig.NASA_API_KEY
+        if (apiKey.isBlank()) {
+            liveData.value = PictureOfTheDayData.Error(Throwable("wrong key"))
+        } else {
+            picturesOfTheDayRetrofitImpl.getRetrofit().getPictureOfTheDay(apiKey,date).enqueue(callback)
+        }
+    }
 
-                    } else{
+    fun sendRequest() {
+        liveData.value = PictureOfTheDayData.Loading(0)
+        val apiKey: String = BuildConfig.NASA_API_KEY
+        if (apiKey.isBlank()) {
+            liveData.value = PictureOfTheDayData.Error(Throwable("wrong key"))
+        } else {
+            picturesOfTheDayRetrofitImpl.getRetrofit().getPictureOfTheDay(apiKey).enqueue(callback)
+        }
+    }
 
-                    }
 
-                }
-
-                override fun onFailure(call: Call<PDOServerResponse>, t: Throwable) {
-                    TODO("Not yet implemented")
-                }
+    private val callback = object : Callback<PDOServerResponse>{
+        override fun onResponse(
+            call: Call<PDOServerResponse>,
+            response: Response<PDOServerResponse>
+        ) {
+            if(response.isSuccessful&&response.body()!=null){
+                liveData.value = PictureOfTheDayData.Success(response.body()!!)
+            }else{
+                liveData.value = PictureOfTheDayData.Error(IllegalStateException("Ошибка"))
             }
-        )
+        }
+
+        override fun onFailure(call: Call<PDOServerResponse>, t: Throwable) {
+            liveData.value = PictureOfTheDayData.Error(IllegalStateException("onFailure"))
+        }
+
     }
 }

@@ -18,6 +18,8 @@ import com.example.materialdesign.viewModel.PictureOfTheDayData
 import com.example.materialdesign.viewModel.PictureOfTheDayViewModel
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import java.text.SimpleDateFormat
+import java.util.*
 
 class MainFragment : Fragment() {
 
@@ -50,6 +52,22 @@ class MainFragment : Fragment() {
         openWikiPage()
 
         setMenu()
+
+        binding.chipGroup.setOnCheckedChangeListener { group, checkedId ->
+            when(checkedId){
+                R.id.twoDaysAgo ->{viewModelPOD.sendRequest(takeDate(-2))}
+                R.id.yesterday ->{viewModelPOD.sendRequest(takeDate(-1))}
+                R.id.today ->{viewModelPOD.sendRequest()}
+            }
+        }
+    }
+
+    private fun takeDate(count: Int): String {
+        val currentDate = Calendar.getInstance()
+        currentDate.add(Calendar.DAY_OF_MONTH, count)
+        val format1 = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        format1.timeZone = TimeZone.getTimeZone("EST")
+        return format1.format(currentDate.time)
     }
 
     private fun openWikiPage() {

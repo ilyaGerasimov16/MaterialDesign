@@ -9,5 +9,9 @@
     <string name="search">Search</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fabDescription">openDescriptionOfPicture</string>
+    <string name="yesterdayChipText">Вчера</string>
+    <string name="todayChipText">Сегодня</string>
+    <string name="twoDaysAgoChipText">Позавчера</string>
 
 </resources>
