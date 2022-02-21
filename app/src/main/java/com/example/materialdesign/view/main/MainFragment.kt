@@ -3,7 +3,6 @@ package com.example.materialdesign.view.main
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -50,8 +49,6 @@ class MainFragment : Fragment() {
 
         openWikiPage()
 
-        funBottomSheetBehavior()
-
         setMenu()
     }
 
@@ -64,36 +61,17 @@ class MainFragment : Fragment() {
         }
     }
 
-    private fun funBottomSheetBehavior() {
-        bottomSheetBehavior = BottomSheetBehavior.from(binding.included.bottomSheetContainer)
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
-
-        bottomSheetBehavior.addBottomSheetCallback(object :
-            BottomSheetBehavior.BottomSheetCallback() {
-            override fun onStateChanged(bottomSheet: View, newState: Int) {
-                /*BottomSheetBehavior.STATE_DRAGGING -> TODO("not implemented")
-                    BottomSheetBehavior.STATE_COLLAPSED -> TODO("not implemented")
-                    BottomSheetBehavior.STATE_EXPANDED -> TODO("not implemented")
-                    BottomSheetBehavior.STATE_HALF_EXPANDED -> TODO("not implemented")
-                    BottomSheetBehavior.STATE_HIDDEN -> TODO("not implemented")
-                    BottomSheetBehavior.STATE_SETTLING -> TODO("not implemented")*/
-            }
-
-            override fun onSlide(bottomSheet: View, slideOffset: Float) {
-                Log.d("myLogs", "slideOffset $slideOffset")
-            }
-
-        })
-    }
-
     private fun setMenu() {
         (requireActivity() as MainActivity).setSupportActionBar(binding.bottomAppBar)
         setHasOptionsMenu(true)
+
+        bottomSheetBehavior = BottomSheetBehavior.from(binding.included.bottomSheetContainer)
 
 
         var isMain = true
         binding.fab.setOnClickListener {
             if (isMain) {
+                bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
                 binding.bottomAppBar.navigationIcon = null
                 binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
                 binding.fab.setImageResource(R.drawable.ic_back_fab)
@@ -106,6 +84,7 @@ class MainFragment : Fragment() {
                 binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
                 binding.fab.setImageResource(R.drawable.ic_plus_fab)
                 binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar)
+                bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
             }
             isMain = !isMain
         }
