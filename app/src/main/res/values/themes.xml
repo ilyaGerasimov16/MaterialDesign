@@ -29,7 +29,28 @@
         <item name="colorOnTertiary">@color/white</item>
         <item name="colorTertiaryContainer">?superColor</item>
         <item name="colorOnTertiaryContainer">?superColor</item>
-        <item name="colorSurface">?superColor</item>
+        <item name="chipStyle">@style/myChipStyle</item>
+        <item name="bottomAppBarStyle">@style/myBottomAppBarStyle</item>
+    </style>
+
+    <style name="shapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="chipBackgroundColor">@color/light_gray</item>
+        <item name="rippleColor">@color/light_gray</item>
+        <item name="chipStrokeColor">@color/light_gray</item>
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">4dp</item>
+        <item name="android:windowBackground">@color/light_gray</item>
+    </style>
+
+    <style name="myChipStyle" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/blue</item>
+        <item name="rippleColor">@color/red</item>
+        <item name="chipStrokeColor">@color/red</item>
+        <item name="shapeAppearanceSmallComponent">@style/shapeAppearance.App.SmallComponent</item>
+    </style>
+
+    <style name="myBottomAppBarStyle" parent="Widget.MaterialComponents.BottomAppBar">
+        <item name="backgroundTint">?superColor</item>
     </style>
 
 </resources>
