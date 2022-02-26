@@ -13,7 +13,7 @@ import coil.load
 import com.example.materialdesign.R
 import com.example.materialdesign.databinding.FragmentMainBinding
 import com.example.materialdesign.view.MainActivity
-import com.example.materialdesign.view.chips.ChipsFragment
+import com.example.materialdesign.view.settings.SettingsFragment
 import com.example.materialdesign.viewModel.PictureOfTheDayData
 import com.example.materialdesign.viewModel.PictureOfTheDayViewModel
 import com.google.android.material.bottomappbar.BottomAppBar
@@ -149,7 +149,7 @@ class MainFragment : Fragment() {
             }
             R.id.app_bar_settings->{
                 requireActivity().supportFragmentManager.beginTransaction()
-                    .replace(R.id.container,ChipsFragment.newInstance()).addToBackStack(null).commit()
+                    .replace(R.id.container,SettingsFragment.newInstance()).addToBackStack(null).commit()
             }
             android.R.id.home->{
                 BottomNavigationDrawerFragment().show(requireActivity().supportFragmentManager,"")

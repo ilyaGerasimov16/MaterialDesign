@@ -1,4 +1,4 @@
-package com.example.materialdesign.view.chips
+package com.example.materialdesign.view.settings
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,14 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.materialdesign.databinding.FragmentChipsBinding
+import com.example.materialdesign.databinding.FragmentSettingsBinding
 import com.google.android.material.chip.Chip
 
-class ChipsFragment : Fragment() {
+class SettingsFragment : Fragment() {
 
 
-    private var _binding:FragmentChipsBinding? = null
-    private val binding:FragmentChipsBinding
+    private var _binding:FragmentSettingsBinding? = null
+    private val binding:FragmentSettingsBinding
     get() = _binding!!
 
 
@@ -21,7 +21,7 @@ class ChipsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentChipsBinding.inflate(inflater,container,false)
+        _binding = FragmentSettingsBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -46,6 +46,6 @@ class ChipsFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() = ChipsFragment()
+        fun newInstance() = SettingsFragment()
     }
 }
