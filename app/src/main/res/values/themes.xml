@@ -36,6 +36,23 @@
         <item name="materialButtonStyle">@style/myMaterialButtonStyle</item>
         <item name="materialCardViewStyle">@style/myMaterialCardViewStyle</item>
         <item name="bottomNavigationStyle">@style/myBottomNavigationStyle</item>
+    </style>
+
+    <style name="MyThemeRedColors" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:navigationBarColor">@color/red_500</item>
+        <item name="colorPrimary">@color/red_600</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/red_100</item>
+        <item name="colorOnPrimaryContainer">@color/red_900</item>
+        <item name="colorPrimaryInverse">@color/red_200</item>
+        <item name="colorSecondary">@color/red_600</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/red_100</item>
+        <item name="colorOnSecondaryContainer">@color/red_900</item>
+        <item name="colorTertiary">@color/red_600</item>
+        <item name="colorOnTertiary">@color/white</item>
+        <item name="colorTertiaryContainer">@color/red_100</item>
+        <item name="colorOnTertiaryContainer">@color/red_900</item>
 
     </style>
 

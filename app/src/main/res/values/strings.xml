@@ -18,5 +18,8 @@
     <string name="tab_2">Вчера</string>
     <string name="tab_3">Позавчера</string>
     <string name="buttonText">Button</string>
+    <string name="name_theme_1">Green Theme</string>
+    <string name="name_theme_2">Red Theme</string>
+    <string name="name_theme_3">Blue Theme</string>
 
 </resources>
