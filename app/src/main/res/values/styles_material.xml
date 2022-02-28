@@ -55,6 +55,10 @@
 
     <style name="myBottomNavigationStyle" parent="Widget.MaterialComponents.BottomNavigationView">
         <item name="backgroundTint">@color/blue</item>
+        <item name="itemIconTint">#512da8</item>
+        <item name="itemTextColor">#880e4f</item>
+
+
     </style>
 
 
