@@ -1,7 +1,10 @@
 package com.example.materialdesign.view
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.Group
 import com.example.materialdesign.R
 import com.example.materialdesign.view.main.MainFragment
 
@@ -18,11 +21,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(getRealStyle(getCurrentTheme()))
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_test_layout)
 
         if(savedInstanceState == null) {
-            supportFragmentManager.beginTransaction().replace(R.id.container,MainFragment.newInstance()).commit()
+            //supportFragmentManager.beginTransaction().replace(R.id.container,MainFragment.newInstance()).commit()
         }
+
+        //findViewById<Button>(R.id.button1).visibility = View.GONE
+        findViewById<Group>(R.id.group1).visibility = View.GONE
+
     }
 
     fun setCurrentTheme(currentTheme: Int) {
@@ -45,4 +52,5 @@ class MainActivity : AppCompatActivity() {
             else -> 0
         }
     }
+
 }
