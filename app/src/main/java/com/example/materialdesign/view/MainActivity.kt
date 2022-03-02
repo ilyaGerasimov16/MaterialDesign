@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         //findViewById<Button>(R.id.button1).visibility = View.GONE
-        findViewById<Group>(R.id.group1).visibility = View.GONE
+        //findViewById<Group>(R.id.group1).visibility = View.GONE
 
     }
 
