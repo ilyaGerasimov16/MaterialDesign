@@ -6,6 +6,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.Group
 import com.example.materialdesign.R
+import com.example.materialdesign.view.coordinator.CoordinatorFragment
 import com.example.materialdesign.view.main.MainFragment
 
 const val ThemeOne = 1
@@ -21,10 +22,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(getRealStyle(getCurrentTheme()))
-        setContentView(R.layout.activity_test_layout)
+        setContentView(R.layout.activity_main)
 
         if(savedInstanceState == null) {
             //supportFragmentManager.beginTransaction().replace(R.id.container,MainFragment.newInstance()).commit()
+            supportFragmentManager.beginTransaction().replace(R.id.container,CoordinatorFragment.newInstance()).commit()
         }
 
         //findViewById<Button>(R.id.button1).visibility = View.GONE
