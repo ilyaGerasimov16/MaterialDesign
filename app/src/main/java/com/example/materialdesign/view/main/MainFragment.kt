@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import coil.load
 import com.example.materialdesign.R
 import com.example.materialdesign.databinding.FragmentMainBinding
+import com.example.materialdesign.databinding.FragmentMainStartBinding
 import com.example.materialdesign.view.MainActivity
 import com.example.materialdesign.view.settings.SettingsFragment
 import com.example.materialdesign.viewModel.PictureOfTheDayData
@@ -24,8 +25,8 @@ import java.util.*
 class MainFragment : Fragment() {
 
     private lateinit var bottomSheetBehavior:BottomSheetBehavior<ConstraintLayout>
-    private var _binding:FragmentMainBinding? = null
-    private val binding:FragmentMainBinding
+    private var _binding:FragmentMainStartBinding? = null
+    private val binding:FragmentMainStartBinding
     get() = _binding!!
 
 
@@ -33,7 +34,7 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentMainBinding.inflate(inflater,container,false)
+        _binding = FragmentMainStartBinding.inflate(inflater,container,false)
         return binding.root
     }
 

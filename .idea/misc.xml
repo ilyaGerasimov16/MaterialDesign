@@ -27,6 +27,8 @@
         <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/layout/fragment_coordinator.xml" value="0.24444444444444444" />
         <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/layout/fragment_earth.xml" value="0.3375" />
         <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/layout/fragment_main.xml" value="0.33" />
+        <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/layout/fragment_main_end.xml" value="0.33" />
+        <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/layout/fragment_main_start.xml" value="0.33" />
         <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/layout/fragment_mars.xml" value="0.3375" />
         <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/layout/fragment_settings.xml" value="0.1" />
         <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/layout/fragment_system.xml" value="0.3375" />
@@ -34,6 +36,7 @@
         <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/menu/menu_bottom_bar_other_screen.xml" value="0.3375" />
         <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.3375" />
         <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/menu/menu_bottom_navigation_view.xml" value="0.19814814814814816" />
+        <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/xml/motion_scene.xml" value="0.3328125" />
       </map>
     </option>
   </component>

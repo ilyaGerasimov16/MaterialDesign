@@ -25,8 +25,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         if(savedInstanceState == null) {
-            //supportFragmentManager.beginTransaction().replace(R.id.container,MainFragment.newInstance()).commit()
-            supportFragmentManager.beginTransaction().replace(R.id.container,CoordinatorFragment.newInstance()).commit()
+            supportFragmentManager.beginTransaction().replace(R.id.container,MainFragment.newInstance()).commit()
+            //supportFragmentManager.beginTransaction().replace(R.id.container,CoordinatorFragment.newInstance()).commit()
         }
 
         //findViewById<Button>(R.id.button1).visibility = View.GONE
