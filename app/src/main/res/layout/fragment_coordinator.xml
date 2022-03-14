@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end"
-        app:layout_behavior=".view.coordinator.ButtonBehavior"
+
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
