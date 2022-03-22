@@ -25,8 +25,8 @@ import java.util.*
 class MainFragment : Fragment() {
 
     private lateinit var bottomSheetBehavior:BottomSheetBehavior<ConstraintLayout>
-    private var _binding:FragmentMainStartBinding? = null
-    private val binding:FragmentMainStartBinding
+    private var _binding:FragmentMainBinding? = null
+    private val binding:FragmentMainBinding
     get() = _binding!!
 
 
@@ -34,7 +34,7 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentMainStartBinding.inflate(inflater,container,false)
+        _binding = FragmentMainBinding.inflate(inflater,container,false)
         return binding.root
     }
 

@@ -17,27 +17,42 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
+
     </FrameLayout>
-
-
-
 
 
     <androidx.constraintlayout.motion.widget.MotionLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layoutDescription="@xml/motion_scene"
-        android:padding="10dp">
+        android:padding="10dp"
+        app:layoutDescription="@xml/motion_scene">
+
+        <Button
+            android:id="@+id/btnTest1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Btn1"
+            app:layout_constraintEnd_toStartOf="@+id/btnTest2"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnTest2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Btn2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnTest1" />
+
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/chipGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/inputLayout"
+            app:layout_constraintBottom_toTopOf="@id/fab"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_view"
             app:singleSelection="true">
 
             <com.google.android.material.chip.Chip
@@ -79,7 +94,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.example.materialdesign.utils.EquilateralImageView
@@ -87,8 +102,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:visibility="visible"
             android:contentDescription="@string/photo_of_the_day_stub"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
