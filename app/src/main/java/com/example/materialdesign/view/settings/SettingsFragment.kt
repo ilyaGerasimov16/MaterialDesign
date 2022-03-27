@@ -14,6 +14,7 @@ import com.example.materialdesign.view.MainActivity
 import com.example.materialdesign.view.ThemeOne
 import com.example.materialdesign.view.ThemeSecond
 import com.example.materialdesign.view.ThemeThird
+import com.example.materialdesign.view.animations.AnimationsActivity
 import com.example.materialdesign.view.bottomNavigation.ApiBottomActivity
 import com.example.materialdesign.view.viewPager.ApiActivity
 import com.google.android.material.chip.Chip
@@ -86,6 +87,9 @@ class SettingsFragment : Fragment() {
         }
         binding.button2.setOnClickListener{
             startActivity(Intent(requireContext(), ApiBottomActivity::class.java))
+        }
+        binding.button3.setOnClickListener{
+            startActivity(Intent(requireContext(), AnimationsActivity::class.java))
         }
     }
 
