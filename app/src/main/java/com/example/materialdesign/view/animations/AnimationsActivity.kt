@@ -3,9 +3,11 @@ package com.example.materialdesign.view.animations
 import android.graphics.Rect
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.transition.*
@@ -23,17 +25,22 @@ class AnimationsActivity : AppCompatActivity() {
         binding = ActivityAnimationsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.imageView.setOnClickListener{
+        binding.button.setOnClickListener{
             flag = !flag
 
-            val changeImageTransform = ChangeImageTransform()
-            changeImageTransform.duration = 3000
-            TransitionManager.beginDelayedTransition(binding.transitionContainer, changeImageTransform)
-            if (flag){
-                binding.imageView.scaleType = ImageView.ScaleType.CENTER_CROP
+
+            val changeBounds = ChangeBounds()
+            changeBounds.setPathMotion(ArcMotion())
+
+            changeBounds.duration = 3000
+            TransitionManager.beginDelayedTransition(binding.transitionContainer, changeBounds)
+            val params = binding.button.layoutParams as FrameLayout.LayoutParams
+            params.gravity = if (flag){
+                Gravity.BOTTOM or Gravity.END
             } else {
-                binding.imageView.scaleType = ImageView.ScaleType.CENTER_INSIDE
+                Gravity.TOP or Gravity.START
             }
+            binding.button.layoutParams = params
         }
     }
 
