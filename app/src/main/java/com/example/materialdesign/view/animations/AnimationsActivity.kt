@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.transition.*
 import com.example.materialdesign.R
@@ -28,19 +29,23 @@ class AnimationsActivity : AppCompatActivity() {
         binding.button.setOnClickListener{
             flag = !flag
 
+            val titles: MutableList<String> = ArrayList()
 
-            val changeBounds = ChangeBounds()
-            changeBounds.setPathMotion(ArcMotion())
-
-            changeBounds.duration = 3000
-            TransitionManager.beginDelayedTransition(binding.transitionContainer, changeBounds)
-            val params = binding.button.layoutParams as FrameLayout.LayoutParams
-            params.gravity = if (flag){
-                Gravity.BOTTOM or Gravity.END
-            } else {
-                Gravity.TOP or Gravity.START
+            repeat(5){
+                titles.add(("Item ${it}"))
             }
-            binding.button.layoutParams = params
+            titles.shuffle()
+            TransitionManager.beginDelayedTransition(binding.transitionsContainer, ChangeBounds())
+            binding.transitionsContainer.removeAllViews()
+            titles.forEach{
+                binding.transitionsContainer.addView(TextView(this).apply {
+                    text = it
+                    textSize = 20f
+                    transitionName = it
+                    gravity = Gravity.CENTER_HORIZONTAL
+                })
+            }
+
         }
     }
 
