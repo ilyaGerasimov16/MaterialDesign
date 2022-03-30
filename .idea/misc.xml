@@ -9,10 +9,15 @@
         <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/drawable-v24/ic_system.xml" value="0.3482051282051282" />
         <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/drawable-v24/swipe_indicator_active.xml" value="0.22777777777777777" />
         <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/drawable-v24/swipe_indicator_passive.xml" value="0.22685185185185186" />
+        <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/drawable/circle_pause_vector.xml" value="0.24259259259259258" />
+        <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/drawable/circle_play_vector.xml" value="0.24259259259259258" />
         <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/drawable/ic_launcher_background.xml" value="0.13703703703703704" />
         <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.13703703703703704" />
         <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/drawable/ic_send.xml" value="0.3194444444444444" />
         <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/drawable/my_choice_chip_background_color.xml" value="0.1648148148148148" />
+        <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/drawable/pause_to_play.xml" value="0.24259259259259258" />
+        <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/drawable/play_pause_circle.xml" value="0.24259259259259258" />
+        <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/drawable/play_to_pause.xml" value="0.24259259259259258" />
         <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/font/aguafina_script.xml" value="0.10925925925925926" />
         <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/layout/activity_animations.xml" value="0.1" />
         <entry key="..\:/Users/1/Desktop/AndroidWithKotlin/MaterialDesign/app/src/main/res/layout/activity_animations_bonus_end.xml" value="0.3375" />
