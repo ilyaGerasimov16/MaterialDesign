@@ -50,7 +50,13 @@ class AnimationsActivity : AppCompatActivity() {
                 val changeBounds = ChangeBounds()
                 changeBounds.duration = 1000L
                 changeBounds.interpolator = AnticipateOvershootInterpolator(1f)
-                constraintSet.clone(this,R.layout.activity_animations_bonus_end)
+                constraintSet.clone(this,R.layout.activity_animations_bonus_start)
+                constraintSet.connect(R.id.title, ConstraintSet.END, R.id.constraint_container,
+                    ConstraintSet.END)
+                constraintSet.connect(R.id.title, ConstraintSet.TOP, R.id.constraint_container,
+                    ConstraintSet.TOP)
+                constraintSet.connect(R.id.title, ConstraintSet.START, R.id.constraint_container,
+                    ConstraintSet.START)
                 TransitionManager.beginDelayedTransition(binding.constraintContainer, changeBounds)
                 constraintSet.applyTo(binding.constraintContainer)
             }
